@@ -6,6 +6,7 @@ const services = [
   "Teritoriju labiekārtošana",
   "Būvlaukumu sagatavošana",
   "Dīķu rakšana un tīrīšana",
+  "Komunikāciju izbūve",
 ];
 
 export default function About() {
@@ -39,13 +40,19 @@ export default function About() {
               visā <span className="text-amber-500">Latvijā.</span>
             </h2>
 
-            <div className="mt-12 max-w-xl border-l-2 border-amber-500 pl-6 py-2">
-              <div className="text-xs tracking-[0.3em] uppercase text-neutral-500">
-                Apraksts
+            <div className="mt-10 max-w-xl">
+              <div className="flex items-baseline gap-3 text-xs tracking-[0.3em] uppercase text-amber-500">
+                <span className="inline-block w-8 h-px bg-amber-500" />
+                Kopš 1999
               </div>
-              <p className="mt-2 text-neutral-400 italic">
-                {/* TODO: pievienot 3–4 teikumus par uzņēmumu — kas dibināja, kopš kad, kāpēc */}
-                Apraksts tiks pievienots drīzumā.
+              <p className="mt-5 text-base md:text-lg text-neutral-200 leading-relaxed">
+                ZS DOLFAS darbību uzsāka{" "}
+                <span className="text-white font-semibold">29.12.1999</span>.
+                Visus šos gadus esam bijuši cieši saistīti ar tehniku, ceļu
+                būvi, zemes darbiem, demontāžu un labiekārtošanu.
+              </p>
+              <p className="mt-4 text-sm md:text-base text-neutral-400 leading-relaxed">
+                Strādājam ar privātpersonām un uzņēmumiem visā Latvijā.
               </p>
             </div>
           </div>

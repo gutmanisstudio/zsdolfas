@@ -2,11 +2,48 @@ import Image from "next/image";
 import Link from "next/link";
 
 const services = [
-  { n: "01", title: "Ceļu un pievadu izbūve", photo: "service-roads.jpg" },
-  { n: "02", title: "Ēku demontāža", photo: "service-demolition.jpg" },
-  { n: "03", title: "Teritoriju labiekārtošana", photo: "service-landscaping.jpg" },
-  { n: "04", title: "Būvlaukumu sagatavošana", photo: "service-sitework.jpg" },
-  { n: "05", title: "Dīķu rakšana un tīrīšana", photo: "service-ponds.jpg" },
+  {
+    n: "01",
+    eyebrow: "Ceļi un pievadi",
+    title: "Ceļu un pievadu izbūve",
+    photo: "service-roads.jpg",
+    desc: "Grants ceļu būvniecība un remonts, grāvju rakšana.",
+  },
+  {
+    n: "02",
+    eyebrow: "Demontāža",
+    title: "Ēku demontāža",
+    photo: "service-demolition.jpg",
+    desc: "Ēku un to pamatu konstrukciju demontāža, būvgružu novešana.",
+  },
+  {
+    n: "03",
+    eyebrow: "Labiekārtošana",
+    title: "Teritoriju labiekārtošana",
+    photo: "service-territory.jpg",
+    desc: "Aizaugušu teritoriju attīrīšana, planēšana, apzaļumošana.",
+  },
+  {
+    n: "04",
+    eyebrow: "Būvlaukumi",
+    title: "Būvlaukumu sagatavošana",
+    photo: "service-sitework.jpg",
+    desc: "Zemes virskārtas norakšana, būvbedres rakšana, minerālmateriālu slāņa izbūve.",
+  },
+  {
+    n: "05",
+    eyebrow: "Dīķi un grāvji",
+    title: "Dīķu rakšana un tīrīšana",
+    photo: "service-ponds.jpg",
+    desc: "Dīķu rakšana, labošana, tīrīšana.",
+  },
+  {
+    n: "06",
+    eyebrow: "Ūdens un kanalizācija",
+    title: "Komunikāciju izbūve",
+    photo: "service-communications.jpg",
+    desc: "Ūdens un kanalizācijas sistēmu un to pieslēgumu izbūve.",
+  },
 ];
 
 export default function Services() {
@@ -33,42 +70,57 @@ export default function Services() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-900">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((s) => (
-            <article
+            <Link
               key={s.n}
-              className="group bg-neutral-950 relative overflow-hidden aspect-[4/5]"
+              href="/pieprasit-tami"
+              className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-800 hover:border-amber-500/40 transition-colors"
             >
+              {/* Background image */}
               <Image
                 src={`/photos/${s.photo}`}
                 alt={s.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/40 to-neutral-950/10" />
-              <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-between">
-                <span className="font-mono text-xs text-amber-500">{s.n}</span>
-                <h3 className="text-xl md:text-2xl font-semibold tracking-tight leading-tight">
+
+              {/* Strong bottom gradient — covers ~65% of card */}
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/85 via-40% to-transparent to-65%" />
+
+              {/* Number badge top-left */}
+              <div className="absolute top-4 left-4">
+                <span className="font-mono text-[10px] tracking-wider text-amber-500 bg-neutral-950/80 backdrop-blur-sm px-2.5 py-1.5 border border-amber-500/30 rounded-md">
+                  {s.n} / 06
+                </span>
+              </div>
+
+              {/* Content stack — bottom-aligned */}
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col gap-3">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-amber-500/90 font-medium">
+                  {s.eyebrow}
+                </span>
+
+                <h3 className="text-xl md:text-2xl font-semibold tracking-tight leading-tight text-white">
                   {s.title}
                 </h3>
+
+                <p className="text-sm leading-relaxed text-neutral-300/85">
+                  {s.desc}
+                </p>
+
+                <div className="mt-1 flex items-center gap-2 text-sm font-semibold text-amber-500">
+                  <span className="border-b border-amber-500/40 pb-0.5 group-hover:border-amber-500 transition-colors">
+                    Pieprasīt tāmi
+                  </span>
+                  <span className="group-hover:translate-x-1 transition-transform duration-500">
+                    →
+                  </span>
+                </div>
               </div>
-            </article>
+            </Link>
           ))}
-          <article className="bg-neutral-950 aspect-[4/5] flex flex-col justify-between p-5 md:p-6 border border-neutral-900">
-            <span className="font-mono text-xs text-neutral-600">06</span>
-            <div>
-              <div className="text-[10px] tracking-[0.3em] uppercase text-neutral-500">
-                Cits jautājums?
-              </div>
-              <Link
-                href="/pieprasit-tami"
-                className="mt-2 inline-flex items-center gap-2 text-xl md:text-2xl font-semibold tracking-tight text-amber-500 hover:text-amber-400 transition-colors"
-              >
-                Sazinies →
-              </Link>
-            </div>
-          </article>
         </div>
       </div>
     </section>

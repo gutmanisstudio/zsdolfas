@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -33,29 +34,35 @@ export default function Hero() {
             ZS <span className="text-amber-500">DOLFAS</span>
           </h1>
           <p
-            className="mt-8 max-w-xl text-base md:text-lg text-neutral-200 animate-fade-in-up"
-            style={{ animationDelay: "0.85s" }}
+            className="mt-6 text-base md:text-lg text-neutral-100 font-medium animate-fade-in-up"
+            style={{ animationDelay: "0.8s" }}
+          >
+            Strādājam ar privātpersonām un uzņēmumiem.
+          </p>
+          <p
+            className="mt-4 max-w-xl text-sm md:text-base text-neutral-300 animate-fade-in-up"
+            style={{ animationDelay: "0.9s" }}
           >
             Ceļu un pievadu izbūve · Ēku demontāža · Teritoriju
-            labiekārtošana · Būvlaukumu sagatavošana · Dīķu rakšana un
-            tīrīšana.
+            labiekārtošana · Būvlaukumu sagatavošana · Dīķu rakšana ·
+            Komunikāciju izbūve.
           </p>
           <div
             className="mt-10 flex flex-wrap gap-4 animate-fade-in-up"
             style={{ animationDelay: "1s" }}
           >
-            <a
+            <Link
               href="/pieprasit-tami"
               className="px-7 py-4 bg-amber-500 text-neutral-950 font-medium tracking-wide hover:bg-amber-400 transition-colors"
             >
               Pieprasīt tāmi
-            </a>
-            <a
-              href="#pakalpojumi"
+            </Link>
+            <Link
+              href="/pakalpojumi"
               className="px-7 py-4 border border-neutral-700 hover:border-neutral-500 text-neutral-100 font-medium tracking-wide transition-colors backdrop-blur-sm bg-neutral-950/30"
             >
               Mūsu pakalpojumi
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { HardHat, Wrench, Users } from "lucide-react";
 
 const machines = [
   {
@@ -103,6 +104,45 @@ export default function Fleet() {
                 {String(machines.length).padStart(2, "0")}
               </span>
               <span>Video kadri no būvlaukumiem</span>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-800">
+              <div className="bg-amber-500 text-neutral-950 p-6">
+                <HardHat className="size-8 stroke-[1.5]" aria-hidden />
+                <h3 className="mt-5 text-lg font-bold tracking-tight leading-tight">
+                  Augsti kvalificēti operatori
+                </h3>
+                <p className="mt-2 text-sm leading-snug text-neutral-950/85">
+                  Mūsu tehnikas operatori ir sertificēti, pieredzes bagāti un
+                  ar augstu atbildības sajūtu kā pret tehniku, tā arī pret
+                  veicamo darbu.
+                </p>
+              </div>
+              <div className="bg-neutral-950 text-neutral-100 p-6 border border-neutral-800">
+                <Wrench className="size-8 stroke-[1.5] text-amber-500" aria-hidden />
+                <h3 className="mt-5 text-lg font-bold tracking-tight leading-tight">
+                  Augstas kvalitātes tehnika
+                </h3>
+                <p className="mt-2 text-sm leading-snug text-neutral-300">
+                  Vadošo būvtehnikas un traktortehnikas zīmolu modeļi. Mūsu
+                  tehniskais personāls rūpējas, lai tehnika vienmēr būtu
+                  izcilā kārtībā — spējam operatīvi reaģēt arī neparedzētās
+                  situācijās.
+                </p>
+              </div>
+              <div className="bg-neutral-950 text-neutral-100 p-6 border border-neutral-800 sm:col-span-2 lg:col-span-1">
+                <Users className="size-8 stroke-[1.5] text-amber-500" aria-hidden />
+                <h3 className="mt-5 text-lg font-bold tracking-tight leading-tight">
+                  Profesionāli tehnikas operatori
+                </h3>
+                <p className="mt-2 text-sm leading-snug text-neutral-300">
+                  Papildu tehnikas nomai piedāvājam arī pieredzējušu tehnikas
+                  operatoru pakalpojumus jūsu projektu realizēšanai. Spējam
+                  palīdzēt ar ēku demontāžas darbiem, ceļu, komunikāciju un
+                  tranšeju rakšanu, upju grunts un stāvmalu tīrīšanu, karjeru
+                  atsegšanu un cita veida darbiem.
+                </p>
+              </div>
             </div>
           </div>
 
