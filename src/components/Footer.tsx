@@ -89,6 +89,17 @@ export default function Footer() {
             aizsargātas
           </div>
           <div className="font-mono">Raiskuma pagasts · Latvija</div>
+          <div>
+            Made by{" "}
+            <a
+              href="https://gutmanistudio.lv"
+              target="_blank"
+              rel="noreferrer"
+              className="text-neutral-300 hover:text-amber-500 transition-colors"
+            >
+              Gutmanis Studio
+            </a>
+          </div>
         </div>
       </div>
     </footer>
